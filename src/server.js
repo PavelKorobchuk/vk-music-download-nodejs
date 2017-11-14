@@ -35,7 +35,7 @@ let scrapFunc = (config) => {
                             window.scrollTo(0, document.body.scrollHeight);
                             setTimeout(function () {
                                 scrollWindowToBottom()
-                            }, 1500);
+                            }, 2000);
                         } else {
                                 let result = () => {
                                     let allSongs = document.querySelectorAll('.audios_list .audio_item:not(.audio_item_disabled) .ai_body'),
