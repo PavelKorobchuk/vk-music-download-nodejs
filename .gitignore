@@ -1,0 +1,7 @@
+node_modules/
+.idea/
+.idea/vcs.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/vk-music-download-nodejs.iml
