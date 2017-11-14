@@ -2,13 +2,10 @@ import express      from 'express';
 import path         from 'path';
 import bodyParser   from 'body-parser';
 import puppeteer    from 'puppeteer';
-import config from './config';
 import downloadTenSongs from './download';
-
 //scraping function
 const PORT = process.env.PORT || 3001;
 const app = express();
-
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, '..', 'public')));
 app.use(bodyParser());
@@ -16,8 +13,7 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-let scrapFunc = () => {
-
+let scrapFunc = (config) => {
     let startScraping = async() => {
         const browser = await puppeteer.launch({
             headless: false,
@@ -31,7 +27,6 @@ let scrapFunc = () => {
         await page.type('input[name="pass"]', config.pass);
         await page.click('.wide_button');
         await page.waitFor(3000);
-
         console.log('Song searching was started...wait.');
         const scrollPage = await page.evaluate(() => {
                 return new Promise((resolve) => {

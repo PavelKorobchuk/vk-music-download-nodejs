@@ -5,5 +5,6 @@
 require('babel-core/register');
 ['.css', '.less', '.sass', '.ttf', '.woff', '.woff2'].forEach((ext) => require.extensions[ext] = () => {});
 require('babel-polyfill');
-var scrapInit = require('./src/server.js');
-scrapInit();
+var scrapInit = require('./src/server.js'),
+    config = require('./src/config.js');
+scrapInit(config);

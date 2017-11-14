@@ -8,7 +8,7 @@ const downloadTenSongs = (array, index, totalSongsLen, temporaryLen) => {
         console.log('Finished!');
     } else {
         let chunkArray = [];
-        console.log(totalSongsLen, 'songs are being downloaded...');
+        console.log(temporaryLen, 'songs are being downloaded...');
 
         for (let i = index; i <= temporaryLen - 1; i++) {
             chunkArray.push(new Promise(function (resolve) {
